@@ -56,7 +56,9 @@ public class MainCLI implements ToDoPlatform{
 							wInput=-1;
 						}
 					}while(wInput<=0);
-					nodes.add(new Node(this, toDos, nodes, new ToDo(titleInput, descInput, wInput), "Assets/voucherpage.png"));
+					ToDo temp=new ToDo(titleInput, descInput, wInput);
+					toDos.add(temp);
+					nodes.add(new Node(this, toDos, nodes, temp, "Assets/voucherpage.png"));
 				break;
 				case 2:
 					System.out.println("Your curr weight is: "+MainUtils.countW(toDos));
@@ -67,11 +69,13 @@ public class MainCLI implements ToDoPlatform{
 				default: 
 					System.out.println("Wrong Input...");
 				break;
-			}
-				
+			}	
 		}
 
+		
+		
 		MainUtils.writeResult(toDos, false);
+		
 		for (Node node : nodes) {
 			node.dispose();
 		}

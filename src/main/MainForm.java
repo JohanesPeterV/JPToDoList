@@ -214,7 +214,6 @@ public class MainForm extends JFrame implements ActionListener, ToDoPlatform{
 			ToDo temp=new ToDo(titleInput, descInput,weightInput);
 			toDos.add(temp);
 			nodes.add(new Node(this,toDos,nodes,temp,"Assets/voucherpage.png"));
-
 		}
 		else if (e.getSource()==exitButton) {
 			MainUtils.writeResult(toDos, false);
